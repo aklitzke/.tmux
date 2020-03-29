@@ -274,11 +274,18 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
-# increase history size
-#set -g history-limit 10000
+bind C-a last-window        # move to last active window
 
-# start with mouse mode enabled
-#set -g mouse on
+# split current window horizontally
+bind s split-window -v
+# split current window vertically
+bind v split-window -h
+bind | split-window -h
+
+# kill entire pane
+bind X confirm-before kill-window
+
+bind N new-window
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
